@@ -40,14 +40,19 @@ struct Test
 			std::cout << "Test " << name << ":" << RED << " Failed!" << WHITE << std::endl;
 			for (int i = 0; i < DataEntryCount; i++)
 			{
-				std::cout << "Error " << i + 1 << ": " << OutputData[i] << std::endl;
+				std::cout << "Error " << i + 1 << "/" << DataEntryCount << ": " << OutputData[i] << std::endl;
 			}
 		}
 		else
 		{
 			std::cout << "Test " << name  << ":" << GREEN << " Success!" << WHITE << std::endl;
-			if(OutputData[0].compare("") != 0)
-				std::cout << "Result: " << OutputData[0] << std::endl;
+			if (OutputData[0].compare("") != 0)
+			{
+				for (int i = 0; i < DataEntryCount; i++)
+				{
+					std::cout << "Info " << i + 1 << "/" << DataEntryCount << ": " << OutputData[i] << std::endl;
+				}
+			}
 		}
 	}
 };
