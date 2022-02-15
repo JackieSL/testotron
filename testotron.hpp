@@ -26,6 +26,12 @@ struct Test
 
 	}
 
+	void AddEntry(std::string& message)
+	{
+		OutputData[DataEntryCount] = message;
+		DataEntryCount++;
+	}
+	
 	void Run()
 	{
 		FuncToTest(Result, DataEntryCount, OutputData);
